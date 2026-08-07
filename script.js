@@ -304,7 +304,400 @@ function openLevel1() {
 
 }
 
+function openLevel2() {
 
+    document
+        .getElementById("menuScreen")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("level1")
+        .classList
+        .remove("hidden");
+
+
+    showLevel2();
+
+}
+
+function showLevel2() {
+
+    document
+        .getElementById("memoryContent")
+        .innerHTML = `
+
+            <div class="memory-number">
+                PLAYER PROFILE · 002
+            </div>
+
+
+            <div class="memory-date">
+                MEMORY CARD
+            </div>
+
+
+            <div class="memory-icon">
+                🎮
+            </div>
+
+
+            <div class="memory-title">
+                BRAYAN
+            </div>
+
+
+            <div class="memory-text">
+
+                <div class="profile-card">
+
+
+                    <div class="profile-header">
+
+                        <span>
+                            PLAYER 01
+                        </span>
+
+                        <span>
+                            STATUS: ACTIVE
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-name">
+                        BRAYAN
+                    </div>
+
+
+                    <div class="profile-line"></div>
+
+
+                    <div class="profile-stat">
+
+                        <span class="profile-label">
+                            MAIN GAME
+                        </span>
+
+                        <span class="profile-value">
+                            Dragon Ball: Sparking! ZERO
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-stat">
+
+                        <span class="profile-label">
+                            FAVORITE WORLDS
+                        </span>
+
+                        <span class="profile-value">
+                            Dragon Ball · One Piece
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-stat">
+
+                        <span class="profile-label">
+                            TEAM
+                        </span>
+
+                        <span class="profile-value">
+                            Santiago Wanderers
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-stat">
+
+                        <span class="profile-label">
+                            BAND
+                        </span>
+
+                        <span class="profile-value">
+                            Avenged Sevenfold
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-stat">
+
+                        <span class="profile-label">
+                            FREE TIME
+                        </span>
+
+                        <span class="profile-value">
+                            Juegos online · juntas · tocatas
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-stat">
+
+                        <span class="profile-label">
+                            FAVORITE LOADOUT
+                        </span>
+
+                        <span class="profile-value">
+                            🌭 Chaparritas · 🍟 Papas fritas · 🍕 Underpizza
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-stat">
+
+                        <span class="profile-label">
+                            SIGNATURE ITEM
+                        </span>
+
+                        <span class="profile-value">
+                            🎮 Mando de PlayStation
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="memory-highlight">
+
+                Hay muchas cosas que hacen que seas tú.
+
+                <br><br>
+
+                Pero creo que una de las que más me gusta
+                es que disfrutas las cosas que amas
+                sin necesitar demasiado.
+
+                <br><br>
+
+                Un juego, música, comida rica,
+                tus amigos, las mascotas...
+
+                <br>
+
+                y yo.
+
+            </div>
+
+
+            <button
+                class="button"
+                onclick="level2Next()"
+            >
+
+                CONTINUE →
+
+            </button>
+
+        `;
+
+}
+
+function level2Next() {
+
+    document
+        .getElementById("memoryContent")
+        .innerHTML = `
+
+            <div class="memory-number">
+                PLAYER PROFILE · 002
+            </div>
+
+
+            <div class="memory-date">
+                FAVORITES
+            </div>
+
+
+            <div class="memory-icon">
+                🎸
+            </div>
+
+
+            <div class="memory-title">
+                SU MUNDO
+            </div>
+
+
+            <div class="memory-text">
+
+                <div class="favorite-grid">
+
+
+                    <div class="favorite-item">
+
+                        <div class="favorite-icon">
+                            🐉
+                        </div>
+
+                        <div class="favorite-name">
+                            DRAGON BALL
+                        </div>
+
+                        <div class="favorite-description">
+                            Uno de sus mundos favoritos.
+                        </div>
+
+                    </div>
+
+
+                    <div class="favorite-item">
+
+                        <div class="favorite-icon">
+                            ☠️
+                        </div>
+
+                        <div class="favorite-name">
+                            ONE PIECE
+                        </div>
+
+                        <div class="favorite-description">
+                            Otra de sus grandes obsesiones.
+                        </div>
+
+                    </div>
+
+
+                    <div class="favorite-item">
+
+                        <div class="favorite-icon">
+                            ⚽
+                        </div>
+
+                        <div class="favorite-name">
+                            SANTIAGO WANDERERS
+                        </div>
+
+                        <div class="favorite-description">
+                            Su equipo.
+                        </div>
+
+                    </div>
+
+
+                    <div class="favorite-item">
+
+                        <div class="favorite-icon">
+                            🎸
+                        </div>
+
+                        <div class="favorite-name">
+                            AVENGED SEVENFOLD
+                        </div>
+
+                        <div class="favorite-description">
+                            Su banda favorita.
+                            <br>
+                            LIVE · JAN 2026
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="memory-highlight">
+
+                Y entre juegos, música, fútbol,
+                amigos y comida...
+
+                <br><br>
+
+                también están esos momentos
+                en los que simplemente
+                pasamos tiempo juntos.
+
+            </div>
+
+
+            <button
+                class="button"
+                onclick="completeLevel2()"
+            >
+
+                ✓ COMPLETE LEVEL
+
+            </button>
+
+        `;
+
+}
+
+function completeLevel2() {
+
+    document
+        .getElementById("memoryContent")
+        .innerHTML = `
+
+            <div class="complete">
+
+                LEVEL 02 COMPLETE ✓
+
+            </div>
+
+
+            <div class="big-heart">
+
+                🎮💙
+
+            </div>
+
+
+            <div class="memory-title">
+
+                PLAYER
+                <br>
+                IDENTIFIED
+
+            </div>
+
+
+            <div class="memory-text">
+
+                Ahora sé un poquito más
+                sobre el jugador.
+
+                <br><br>
+
+                Pero todavía queda mucho
+                por descubrir.
+
+                <br><br>
+
+                Y algunas de mis partes
+                favoritas de esta historia
+                ni siquiera están aquí todavía.
+
+            </div>
+
+
+            <button
+                class="button"
+                onclick="backToMenu()"
+            >
+
+                ← RETURN TO ARCHIVE
+
+            </button>
+
+        `;
+
+}
 
 function showMemory() {
 
