@@ -1,278 +1,89 @@
-<!DOCTYPE html>
-<html lang="es">
+<!-- MENU -->
 
-<head>
+<section
+    class="screen hidden"
+    id="menuScreen"
+>
 
-    <meta charset="UTF-8">
+    <div class="content">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>03 · 10 · 2026</title>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
-</head>
-
-
-<body>
-
-
-    <div class="stars"></div>
-
-    <div class="glow"></div>
-
-
-    <!-- PORTADA -->
-
-    <section
-        class="screen"
-        id="welcomeScreen"
-    >
-
-        <div class="content">
-
-            <div class="date">
-                03 · 10 · 2026
-            </div>
-
-
-            <h1>
-                PARA TI
-            </h1>
-
-
-            <p class="subtitle">
-                Hay algo que quiero mostrarte...
-            </p>
-
-
-            <button
-                class="button"
-                onclick="startGame()"
-            >
-                ▶ &nbsp; COMENZAR
-            </button>
-
-
-            <p
-                class="subtitle"
-                style="
-                    margin-top:15px;
-                    font-size:9px;
-                "
-            >
-                PRESS START
-            </p>
-
+        <div class="date">
+            ARCHIVO DE NUESTRA HISTORIA
         </div>
 
-    </section>
+
+        <h2>
+            SELECCIONA UNA MEMORIA
+        </h2>
 
 
+        <div class="menu-box">
 
-    <!-- CARGANDO -->
-
-    <section
-        class="screen hidden"
-        id="loadingScreen"
-    >
-
-        <div class="content">
-
-            <div class="date">
-                03 · 10 · 2026
+            <div class="menu-title">
+                MEMORY FILE · 001
             </div>
-
-
-            <p class="subtitle">
-                CARGANDO MEMORIA...
-            </p>
 
 
             <div
-                style="
-                    width:280px;
-                    height:3px;
-                    background:#162039;
-                    margin:25px auto;
-                "
+                class="level unlocked"
+                onclick="openLevel1()"
             >
 
-                <div
-                    id="progress"
-                    style="
-                        width:0%;
-                        height:100%;
-                        background:#6fa8ff;
-                        transition:width 2.5s;
-                    "
-                ></div>
+                <span class="level-number">
+                    ✓ LEVEL 01
+                </span>
+
+                NUESTRA HISTORIA
 
             </div>
 
 
-            <p
-                class="subtitle"
-                id="percentage"
+            <div
+                class="level unlocked"
+                onclick="openLevel2()"
             >
-                0%
-            </p>
 
-        </div>
+                <span class="level-number">
+                    ✓ LEVEL 02
+                </span>
 
-    </section>
-
-
-
-    <!-- MENU -->
-
-    <section
-        class="screen hidden"
-        id="menuScreen"
-    >
-
-        <div class="content">
-
-            <div class="date">
-                ARCHIVO DE NUESTRA HISTORIA
-            </div>
-
-
-            <h2>
-                SELECCIONA UNA MEMORIA
-            </h2>
-
-
-            <div class="menu-box">
-
-
-                <div class="menu-title">
-                    MEMORY FILE · 001
-                </div>
-
-
-                <div
-                    class="level unlocked"
-                    onclick="openLevel1()"
-                >
-
-                    <span class="level-number">
-                        ✓ LEVEL 01
-                    </span>
-
-                    NUESTRA HISTORIA
-
-                </div>
-
-
-              <div
-    class="level unlocked"
-    onclick="openLevel2()"
->
-
-    <span class="level-number">
-        ✓ LEVEL 02
-    </span>
-
-    SOBRE TI
-
-</div>
-
-                <div class="level locked">
-
-                    <span class="level-number">
-                        🔒 LEVEL 03
-                    </span>
-
-                    NUESTROS RECUERDOS
-
-                </div>
-
-
-              <div
-    class="level unlocked"
-    onclick="openLevel3()"
->
-
-    <span class="level-number">
-        ✓ LEVEL 03
-    </span>
-
-    NUESTROS RECUERDOS
-
-</div>
-
-
-                <div class="level locked">
-
-                    <span class="level-number">
-                        🔒 FINAL LEVEL
-                    </span>
-
-                    PARA TI
-
-                </div>
-
+                SOBRE TI
 
             </div>
 
 
-            <p class="subtitle">
-                PLAYER: BRAYAN
-            </p>
+            <div
+                class="level unlocked"
+                onclick="openLevel3()"
+            >
 
-        </div>
+                <span class="level-number">
+                    ✓ LEVEL 03
+                </span>
 
-    </section>
+                NUESTROS RECUERDOS
 
-
-
-    <!-- LEVEL 01 -->
-
-    <section
-        class="screen hidden"
-        id="level1"
-    >
-
-        <div class="content">
-
-            <div class="date">
-                LEVEL 01 · NUESTRA HISTORIA
             </div>
 
 
-            <div id="memoryContent"></div>
+            <div class="level locked">
+
+                <span class="level-number">
+                    🔒 FINAL LEVEL
+                </span>
+
+                PARA TI
+
+            </div>
+
 
         </div>
 
-    </section>
 
+        <p class="subtitle">
+            PLAYER: BRAYAN
+        </p>
 
-
-    <!-- INTERFAZ -->
-
-    <div class="player">
-        PLAYER 01 · BRAYAN
     </div>
 
-
-    <div class="status">
-        MEMORY FILE · 001
-    </div>
-
-
-
-    <!-- JAVASCRIPT -->
-
-    <script src="script.js"></script>
-
-
-</body>
-
-</html>
+</section>
