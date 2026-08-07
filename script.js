@@ -1,17 +1,14 @@
 let currentMemory = 0;
 
-
 /* =========================
    LEVEL 01 · NUESTRA HISTORIA
 ========================= */
 
 const memories = [
-
     {
         date: "03 · MAY · 2026",
         title: "EL COMIENZO",
         icon: "🌊",
-
         text: `
             Nos conocimos gracias a unos amigos
             que organizaron una salida a la playa.
@@ -35,16 +32,13 @@ const memories = [
             Sin saberlo, esa conversación iba a ser
             el comienzo de todo.
         `,
-
         video: null
     },
-
 
     {
         date: "03 · MAY · 2026",
         title: "LOS JUEGOS",
         icon: "🐭",
-
         text: `
             Ese mismo día terminamos jugando
             los cuatro en Chuck E. Cheese.
@@ -59,16 +53,13 @@ const memories = [
             después tuvieron que irse porque
             estaban todos mojados. 😂
         `,
-
         video: "media/raton%20cec.mp4"
     },
-
 
     {
         date: "04 · MAY · 2026",
         title: "TOMODACHI",
         icon: "🎪",
-
         text: `
             Al día siguiente me invitaste
             a la feria Tomodachi.
@@ -90,7 +81,6 @@ const memories = [
             Hasta que empezamos a vernos
             prácticamente todos los días.
         `,
-
         videos: [
             "media/foto%20dumb.mp4",
             "media/foto%20plaza.mp4",
@@ -98,17 +88,14 @@ const memories = [
         ]
     },
 
-
     {
         date: "09 · MAY · 2026",
         title: "DÍA 07",
         icon: "💙",
-
         text: `
             Solo habían pasado siete días
             desde que nos conocimos.
         `,
-
         special: `
             Y después de solamente una semana...
 
@@ -118,16 +105,13 @@ const memories = [
                 nos hicimos novios.
             </strong>
         `,
-
         video: "media/primera%20foto.mp4"
     },
-
 
     {
         date: "24 · MAY · 2026",
         title: "NUESTRO HOGAR",
         icon: "🏠",
-
         text: `
             Empezó el círculo.
 
@@ -149,16 +133,13 @@ const memories = [
             Y aproximadamente el 24 de mayo,
             empezamos a vivir juntos.
         `,
-
         video: null
     },
-
 
     {
         date: "UNO DE NUESTROS MEJORES DÍAS",
         title: "EL MAR",
         icon: "🌅",
-
         text: `
             El mar.
 
@@ -174,14 +155,12 @@ const memories = [
 
             Uno de nuestros mejores días.
         `,
-
         videos: [
             "media/playa.mp4",
             "media/foto%20polaroid.mp4",
             "media/foto%20polaroid%202.mp4"
         ]
     }
-
 ];
 
 
@@ -243,7 +222,6 @@ function startGame() {
             number + "%";
 
     }, 100);
-
 }
 
 
@@ -266,7 +244,6 @@ function openLevel1() {
     currentMemory = 0;
 
     showMemory();
-
 }
 
 
@@ -294,7 +271,6 @@ function showMemory() {
             </div>
 
         `;
-
     }
 
 
@@ -321,7 +297,6 @@ function showMemory() {
             </video>
 
         `;
-
     }
 
 
@@ -350,7 +325,6 @@ function showMemory() {
             `;
 
         });
-
     }
 
 
@@ -434,7 +408,6 @@ function showMemory() {
             </button>
 
         `;
-
 }
 
 
@@ -454,7 +427,6 @@ function nextMemory() {
         completeLevel();
 
     }
-
 }
 
 
@@ -514,7 +486,6 @@ function completeLevel() {
             </button>
 
         `;
-
 }
 
 
@@ -535,7 +506,6 @@ function openLevel2() {
         .remove("hidden");
 
     showLevel2();
-
 }
 
 
@@ -717,7 +687,6 @@ function showLevel2() {
             </button>
 
         `;
-
 }
 
 
@@ -849,7 +818,6 @@ function level2Next() {
             </button>
 
         `;
-
 }
 
 
@@ -905,7 +873,6 @@ function completeLevel2() {
             </button>
 
         `;
-
 }
 
 
@@ -926,7 +893,6 @@ function openLevel3() {
         .remove("hidden");
 
     showLevel3();
-
 }
 
 
@@ -995,7 +961,6 @@ function showLevel3() {
             </button>
 
         `;
-
 }
 
 
@@ -1060,7 +1025,6 @@ function level3Memory1() {
             </button>
 
         `;
-
 }
 
 
@@ -1126,7 +1090,6 @@ function level3Memory2() {
             </button>
 
         `;
-
 }
 
 
@@ -1189,7 +1152,6 @@ function completeLevel3() {
             </button>
 
         `;
-
 }
 
 
@@ -1208,5 +1170,4 @@ function backToMenu() {
         .getElementById("menuScreen")
         .classList
         .remove("hidden");
-
 }
