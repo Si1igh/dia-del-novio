@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>03 · 10 · 2026</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #030817;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Fondo de estrellas */
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px),
+                radial-gradient(circle, rgba(120,180,255,0.5) 1px, transparent 1px);
+            background-size: 80px 80px, 130px 130px;
+            background-position: 0 0, 40px 60px;
+            animation: starsMove 25s linear infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes starsMove {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(80px);
+            }
+        }
+
+        /* Brillo central */
+
+        .glow {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(30, 100, 255, 0.12);
+            filter: blur(100px);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Contenedor principal */
+
+        .container {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .screen {
+            width: 100%;
+            max-width: 650px;
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Fecha */
+
+        .date {
+            font-size: 14px;
+            letter-spacing: 6px;
+            color: #78aaff;
+            margin-bottom: 35px;
+        }
+
+        /* Título */
+
+        h1 {
+            font-size: clamp(42px, 10vw, 82px);
+            letter-spacing: 5px;
+            font-weight: 300;
+            margin-bottom: 15px;
+            text-shadow:
+                0 0 15px rgba(80,150,255,0.5),
+                0 0 40px rgba(40,100,255,0.25);
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: #9aa8c7;
+            letter-spacing: 2px;
+            margin-bottom: 55px;
+        }
+
+        /* Botón */
+
+        .start-button {
+            display: inline-block;
+            padding: 16px 42px;
+            border: 1px solid rgba(110,170,255,0.7);
+            background: rgba(30,80,160,0.12);
+            color: white;
+            font-size: 13px;
+            letter-spacing: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow:
+                0 0 20px rgba(40,120,255,0.12);
+        }
+
+        .start-button:hover {
+            background: rgba(50,120,255,0.25);
+            border-color: #8dbbff;
+            box-shadow:
+                0 0 25px rgba(70,140,255,0.4);
+            transform: scale(1.04);
+        }
+
+        .press-start {
+            margin-top: 18px;
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: #56647f;
+        }
+
+        /* Texto inferior */
+
+        .player {
+            position: fixed;
+            bottom: 25px;
+            left: 30px;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: #46536d;
+        }
+
+        .status {
+            position: fixed;
+            bottom: 25px;
+            right: 30px;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: #46536d;
+        }
+
+        /* Pantalla de carga */
+
+        .loading {
+            display: none;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .loading-bar {
+            width: 280px;
+            height: 3px;
+            background: #162039;
+            margin: 25px auto;
+            overflow: hidden;
+        }
+
+        .loading-progress {
+            width: 0%;
+            height: 100%;
+            background: #6fa8ff;
+            box-shadow: 0 0 10px #6fa8ff;
+            transition: width 2.5s linear;
+        }
+
+        .loading-text {
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #7888a8;
+        }
+
+        /* Ocultar pantalla */
+
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 600px) {
+
+            .date {
+                font-size: 11px;
+                letter-spacing: 4px;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            .subtitle {
+                font-size: 12px;
+            }
+
+            .player,
+            .status {
+                font-size: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="stars"></div>
+    <div class="glow"></div>
+
+    <main class="container">
+
+        <!-- PORTADA -->
+
+        <section class="screen" id="welcomeScreen">
+
+            <div class="date">
+                03 · 10 · 2026
+            </div>
+
+            <h1>
+                PARA TI
+            </h1>
+
+            <p class="subtitle">
+                Hay algo que quiero mostrarte...
+            </p>
+
+            <button class="start-button" onclick="startGame()">
+                ▶ &nbsp; COMENZAR
+            </button>
+
+            <div class="press-start">
+                PRESS START
+            </div>
+
+        </section>
+
+
+        <!-- PANTALLA DE CARGA -->
+
+        <section class="screen loading" id="loadingScreen">
+
+            <div class="date">
+                03 · 10 · 2026
+            </div>
+
+            <div class="loading-text">
+                LOADING MEMORY...
+            </div>
+
+            <div class="loading-bar">
+                <div class="loading-progress" id="progress"></div>
+            </div>
+
+            <div class="loading-text" id="percentage">
+                0%
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div class="player">
+        PLAYER 01
+    </div>
+
+    <div class="status">
+        MEMORY FILE · 001
+    </div>
+
+
+    <script>
+
+        function startGame() {
+
+            const welcome = document.getElementById("welcomeScreen");
+            const loading = document.getElementById("loadingScreen");
+            const progress = document.getElementById("progress");
+            const percentage = document.getElementById("percentage");
+
+            welcome.classList.add("hidden");
+            loading.classList.add("active");
+
+            setTimeout(() => {
+                progress.style.width = "100%";
+            }, 100);
+
+            let number = 0;
+
+            const counter = setInterval(() => {
+
+                number += 4;
+
+                if (number >= 100) {
+                    number = 100;
+                    clearInterval(counter);
+                }
+
+                percentage.textContent = number + "%";
+
+            }, 100);
+
+        }
+
+    </script>
+
+</body>
+</html>
