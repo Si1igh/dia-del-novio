@@ -27,7 +27,9 @@
     <div class="glow"></div>
 
 
-    <!-- PORTADA -->
+    <!-- =========================
+         PORTADA
+    ========================== -->
 
     <section
         class="screen"
@@ -40,13 +42,16 @@
                 03 · 10 · 2026
             </div>
 
+
             <h1>
                 PARA TI
             </h1>
 
+
             <p class="subtitle">
                 Hay algo que quiero mostrarte...
             </p>
+
 
             <button
                 class="button"
@@ -54,6 +59,7 @@
             >
                 ▶ &nbsp; COMENZAR
             </button>
+
 
             <p
                 class="subtitle"
@@ -71,7 +77,9 @@
 
 
 
-    <!-- CARGANDO -->
+    <!-- =========================
+         CARGANDO
+    ========================== -->
 
     <section
         class="screen hidden"
@@ -84,9 +92,11 @@
                 03 · 10 · 2026
             </div>
 
+
             <p class="subtitle">
                 CARGANDO MEMORIA...
             </p>
+
 
             <div
                 style="
@@ -109,6 +119,7 @@
 
             </div>
 
+
             <p
                 class="subtitle"
                 id="percentage"
@@ -122,7 +133,9 @@
 
 
 
-    <!-- MENU -->
+    <!-- =========================
+         MENU PRINCIPAL
+    ========================== -->
 
     <section
         class="screen hidden"
@@ -135,92 +148,175 @@
                 ARCHIVO DE NUESTRA HISTORIA
             </div>
 
+
             <h2>
                 SELECCIONA UNA MEMORIA
             </h2>
 
-           <div class="menu-box">
 
-    <div class="menu-title">
+            <div class="menu-box">
+
+
+                <div class="menu-title">
+                    MEMORY FILE · 001
+                </div>
+
+
+
+                <!-- LEVEL 01 -->
+
+                <div
+                    class="level unlocked"
+                    onclick="openLevel1()"
+                >
+
+                    <span class="level-number">
+                        ✓ LEVEL 01
+                    </span>
+
+                    NUESTRA HISTORIA
+
+                </div>
+
+
+
+                <!-- LEVEL 02 -->
+
+                <div
+                    class="level unlocked"
+                    onclick="openLevel2()"
+                >
+
+                    <span class="level-number">
+                        ✓ LEVEL 02
+                    </span>
+
+                    SOBRE TI
+
+                </div>
+
+
+
+                <!-- LEVEL 03 -->
+
+                <div
+                    class="level unlocked"
+                    onclick="openLevel3()"
+                >
+
+                    <span class="level-number">
+                        ✓ LEVEL 03
+                    </span>
+
+                    NUESTROS RECUERDOS
+
+                </div>
+
+
+
+                <!-- LEVEL 04 -->
+
+                <div
+                    class="level unlocked"
+                    onclick="openLevel4()"
+                >
+
+                    <span class="level-number">
+                        ✓ LEVEL 04
+                    </span>
+
+                    UNA CARTA PARA TI
+
+                </div>
+
+
+
+                <!-- LEVEL 05 -->
+
+                <div class="level locked">
+
+                    <span class="level-number">
+                        🔒 LEVEL 05
+                    </span>
+
+                    ???
+
+                </div>
+
+
+
+                <!-- LEVEL 06 -->
+
+                <div class="level locked">
+
+                    <span class="level-number">
+                        🔒 LEVEL 06
+                    </span>
+
+                    EASTER EGG
+
+                </div>
+
+
+            </div>
+
+
+            <p class="subtitle">
+                PLAYER: BRAYAN
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTENEDOR DE LOS NIVELES
+    ========================== -->
+
+    <section
+        class="screen hidden"
+        id="level1"
+    >
+
+        <div class="content">
+
+            <div class="date">
+                ARCHIVO · MEMORY FILE
+            </div>
+
+
+            <div id="memoryContent"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         INTERFAZ
+    ========================== -->
+
+    <div class="player">
+        PLAYER 01 · BRAYAN
+    </div>
+
+
+    <div class="status">
         MEMORY FILE · 001
     </div>
 
 
-    <div
-        class="level unlocked"
-        onclick="openLevel1()"
-    >
 
-        <span class="level-number">
-            ✓ LEVEL 01
-        </span>
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
-        NUESTRA HISTORIA
-
-    </div>
+    <script src="script.js"></script>
 
 
-    <div
-        class="level unlocked"
-        onclick="openLevel2()"
-    >
+</body>
 
-        <span class="level-number">
-            ✓ LEVEL 02
-        </span>
-
-        SOBRE TI
-
-    </div>
-
-
-    <div
-        class="level unlocked"
-        onclick="openLevel3()"
-    >
-
-        <span class="level-number">
-            ✓ LEVEL 03
-        </span>
-
-        NUESTROS RECUERDOS
-
-    </div>
-
-
-    <div
-        class="level unlocked"
-        onclick="openLevel4()"
-    >
-
-        <span class="level-number">
-            ✓ LEVEL 04
-        </span>
-
-        UNA CARTA PARA TI
-
-    </div>
-
-
-    <div class="level locked">
-
-        <span class="level-number">
-            🔒 LEVEL 05
-        </span>
-
-        ???
-
-    </div>
-
-
-    <div class="level locked">
-
-        <span class="level-number">
-            🔒 LEVEL 06
-        </span>
-
-        EASTER EGG
-
-    </div>
-
-</div>
+</html>
