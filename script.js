@@ -856,7 +856,7 @@ function level3Memory1() {
             </div>
 
             <div class="memory-title">
-                UN BESO
+                UNA FOTO
             </div>
 
             <img
