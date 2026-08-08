@@ -638,3 +638,16 @@ button {
     }
 
 }
+
+
+/* FOTOS DEL LEVEL 03 */
+
+.memory-photo {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 25px auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
