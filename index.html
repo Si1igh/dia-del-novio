@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,9 +23,15 @@
 
 <body>
 
+
+    <!-- =========================
+         FONDO
+    ========================== -->
+
     <div class="stars"></div>
 
     <div class="glow"></div>
+
 
 
     <!-- =========================
@@ -163,7 +170,9 @@
 
 
 
-                <!-- LEVEL 01 -->
+                <!-- =========================
+                     LEVEL 01
+                ========================== -->
 
                 <div
                     class="level unlocked"
@@ -180,7 +189,9 @@
 
 
 
-                <!-- LEVEL 02 -->
+                <!-- =========================
+                     LEVEL 02
+                ========================== -->
 
                 <div
                     class="level unlocked"
@@ -197,7 +208,9 @@
 
 
 
-                <!-- LEVEL 03 -->
+                <!-- =========================
+                     LEVEL 03
+                ========================== -->
 
                 <div
                     class="level unlocked"
@@ -212,45 +225,80 @@
 
                 </div>
 
-<!-- LEVEL 04 -->
-
-<div
-    class="level unlocked"
-    onclick="openLevel4()"
->
-
-    <span class="level-number">
-        ✓ LEVEL 04
-    </span>
-
-    UNA CARTA PARA TI
-
-</div>
 
 
+                <!-- =========================
+                     LEVEL 04
+                ========================== -->
 
-<!-- LEVEL 05 · EASTER EGG -->
+                <div
+                    class="level unlocked"
+                    onclick="openLevel4()"
+                >
 
-<div
-    class="level unlocked"
-    id="easterEggLevel"
-    onclick="openLevel5()"
-    style="display:none;"
->
+                    <span class="level-number">
+                        ✓ LEVEL 04
+                    </span>
 
-    <span class="level-number">
-        🔓 LEVEL 05
-    </span>
+                    UNA CARTA PARA TI
 
-    EASTER EGG
-
-</div>
+                </div>
 
 
-<p class="subtitle">
-    PLAYER: BRAYAN
-</p>
 
-</div>
+                <!-- =========================
+                     LEVEL 05 · EASTER EGG
+                ========================== -->
 
-</section>   
+                <div
+                    class="level locked"
+                    id="level5Button"
+                >
+
+                    <span class="level-number">
+                        🔒 LEVEL 05
+                    </span>
+
+                    EASTER EGG
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PANTALLA DE LEVELS
+    ========================== -->
+
+    <section
+        class="screen hidden"
+        id="level1"
+    >
+
+        <div class="content">
+
+            <div id="memoryContent"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
+```
