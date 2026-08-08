@@ -1,4 +1,6 @@
+```javascript
 let currentMemory = 0;
+let letterPage = 0;
 
 /* =========================
    LEVEL 01 · NUESTRA HISTORIA
@@ -176,11 +178,13 @@ const memories = [
     }
 ];
 
+
 /* =========================
    INICIO
 ========================= */
 
 function startGame() {
+
     document
         .getElementById("welcomeScreen")
         .classList
@@ -191,7 +195,8 @@ function startGame() {
         .classList
         .remove("hidden");
 
-    const progress = document.getElementById("progress");
+    const progress =
+        document.getElementById("progress");
 
     setTimeout(() => {
         progress.style.width = "100%";
@@ -200,14 +205,17 @@ function startGame() {
     let number = 0;
 
     const counter = setInterval(() => {
+
         number += 4;
 
         if (number >= 100) {
+
             number = 100;
 
             clearInterval(counter);
 
             setTimeout(() => {
+
                 document
                     .getElementById("loadingScreen")
                     .classList
@@ -217,6 +225,7 @@ function startGame() {
                     .getElementById("menuScreen")
                     .classList
                     .remove("hidden");
+
             }, 500);
         }
 
@@ -227,11 +236,13 @@ function startGame() {
     }, 100);
 }
 
+
 /* =========================
    LEVEL 01
 ========================= */
 
 function openLevel1() {
+
     document
         .getElementById("menuScreen")
         .classList
@@ -247,14 +258,19 @@ function openLevel1() {
     showMemory();
 }
 
+
 function showMemory() {
-    const memory = memories[currentMemory];
+
+    const memory =
+        memories[currentMemory];
 
     let days = "";
 
     if (currentMemory === 3) {
+
         days = `
             <div class="days">
+
                 <div class="day active">01</div>
                 <div class="day active">02</div>
                 <div class="day active">03</div>
@@ -262,13 +278,16 @@ function showMemory() {
                 <div class="day active">05</div>
                 <div class="day active">06</div>
                 <div class="day active">07</div>
+
             </div>
         `;
     }
 
+
     let media = "";
 
     if (memory.video) {
+
         media = `
             <video
                 class="memory-video"
@@ -276,18 +295,23 @@ function showMemory() {
                 playsinline
                 preload="metadata"
             >
+
                 <source
                     src="${memory.video}"
                     type="video/mp4"
                 >
 
                 Tu navegador no puede reproducir este video.
+
             </video>
         `;
     }
 
+
     if (memory.videos) {
+
         memory.videos.forEach(video => {
+
             media += `
                 <video
                     class="memory-video"
@@ -295,53 +319,70 @@ function showMemory() {
                     playsinline
                     preload="metadata"
                 >
+
                     <source
                         src="${video}"
                         type="video/mp4"
                     >
 
                     Tu navegador no puede reproducir este video.
+
                 </video>
             `;
+
         });
     }
 
-    const special = memory.special
-        ? `
-            <div class="memory-highlight">
-                ${memory.special}
-            </div>
-        `
-        : "";
+
+    const special =
+        memory.special
+            ? `
+                <div class="memory-highlight">
+                    ${memory.special}
+                </div>
+              `
+            : "";
+
 
     const isLast =
         currentMemory === memories.length - 1;
 
+
     document
         .getElementById("memoryContent")
         .innerHTML = `
+
             <div class="memory-number">
+
                 MEMORY
                 ${String(currentMemory + 1).padStart(3, "0")}
+
                 /
+
                 ${String(memories.length).padStart(3, "0")}
+
             </div>
+
 
             <div class="memory-date">
                 ${memory.date}
             </div>
 
+
             <div class="memory-icon">
                 ${memory.icon}
             </div>
+
 
             <div class="memory-title">
                 ${memory.title}
             </div>
 
+
             <div class="memory-text">
                 ${memory.text}
             </div>
+
 
             ${media}
 
@@ -349,47 +390,70 @@ function showMemory() {
 
             ${special}
 
+
             <button
                 class="button"
                 onclick="nextMemory()"
             >
+
                 ${
                     isLast
                         ? "✓ LEVEL COMPLETE"
                         : "NEXT MEMORY →"
                 }
+
             </button>
+
         `;
 }
 
+
 function nextMemory() {
-    if (currentMemory < memories.length - 1) {
+
+    if (
+        currentMemory <
+        memories.length - 1
+    ) {
+
         currentMemory++;
+
         showMemory();
+
     } else {
+
         completeLevel();
+
     }
 }
 
+
 function completeLevel() {
+
     document
         .getElementById("memoryContent")
         .innerHTML = `
+
             <div class="complete">
                 LEVEL 01 COMPLETE ✓
             </div>
+
 
             <div class="big-heart">
                 💙
             </div>
 
+
             <div class="memory-title">
+
                 Y EL RESTO
                 <br>
                 ES HISTORIA
+
             </div>
 
+
             <div class="memory-text">
+
                 Todo comenzó con una salida
                 a la playa.
 
@@ -401,22 +465,29 @@ function completeLevel() {
 
                 Todavía nos queda mucha historia
                 por escribir.
+
             </div>
+
 
             <button
                 class="button"
                 onclick="backToMenu()"
             >
+
                 ← RETURN TO ARCHIVE
+
             </button>
+
         `;
 }
+
 
 /* =========================
    LEVEL 02 · SOBRE TI
 ========================= */
 
 function openLevel2() {
+
     document
         .getElementById("menuScreen")
         .classList
@@ -430,30 +501,39 @@ function openLevel2() {
     showLevel2();
 }
 
+
 function showLevel2() {
+
     document
         .getElementById("memoryContent")
         .innerHTML = `
+
             <div class="memory-number">
                 PLAYER PROFILE · 002
             </div>
+
 
             <div class="memory-date">
                 MEMORY CARD
             </div>
 
+
             <div class="memory-icon">
                 🎮
             </div>
+
 
             <div class="memory-title">
                 BRAYAN
             </div>
 
+
             <div class="memory-text">
+
                 <div class="profile-card">
 
                     <div class="profile-header">
+
                         <span>
                             PLAYER 01
                         </span>
@@ -461,15 +541,20 @@ function showLevel2() {
                         <span>
                             STATUS: ACTIVE
                         </span>
+
                     </div>
+
 
                     <div class="profile-name">
                         BRAYAN
                     </div>
 
+
                     <div class="profile-line"></div>
 
+
                     <div class="profile-stat">
+
                         <span class="profile-label">
                             MAIN GAME
                         </span>
@@ -477,9 +562,12 @@ function showLevel2() {
                         <span class="profile-value">
                             Dragon Ball: Sparking! ZERO
                         </span>
+
                     </div>
 
+
                     <div class="profile-stat">
+
                         <span class="profile-label">
                             FAVORITE WORLDS
                         </span>
@@ -487,9 +575,12 @@ function showLevel2() {
                         <span class="profile-value">
                             Dragon Ball · One Piece
                         </span>
+
                     </div>
 
+
                     <div class="profile-stat">
+
                         <span class="profile-label">
                             TEAM
                         </span>
@@ -497,9 +588,12 @@ function showLevel2() {
                         <span class="profile-value">
                             Santiago Wanderers
                         </span>
+
                     </div>
 
+
                     <div class="profile-stat">
+
                         <span class="profile-label">
                             BAND
                         </span>
@@ -507,9 +601,12 @@ function showLevel2() {
                         <span class="profile-value">
                             Avenged Sevenfold
                         </span>
+
                     </div>
 
+
                     <div class="profile-stat">
+
                         <span class="profile-label">
                             FREE TIME
                         </span>
@@ -517,9 +614,12 @@ function showLevel2() {
                         <span class="profile-value">
                             Juegos online · juntas · tocatas
                         </span>
+
                     </div>
 
+
                     <div class="profile-stat">
+
                         <span class="profile-label">
                             FAVORITE LOADOUT
                         </span>
@@ -527,9 +627,12 @@ function showLevel2() {
                         <span class="profile-value">
                             🌭 Chaparritas · 🍟 Papas fritas · 🍕 Underpizza
                         </span>
+
                     </div>
 
+
                     <div class="profile-stat">
+
                         <span class="profile-label">
                             SIGNATURE ITEM
                         </span>
@@ -537,12 +640,16 @@ function showLevel2() {
                         <span class="profile-value">
                             🎮 Mando de PlayStation
                         </span>
+
                     </div>
 
                 </div>
+
             </div>
 
+
             <div class="memory-highlight">
+
                 Hay muchas cosas que hacen que seas tú.
 
                 <br><br>
@@ -559,41 +666,55 @@ function showLevel2() {
                 <br>
 
                 y yo.
+
             </div>
+
 
             <button
                 class="button"
                 onclick="level2Next()"
             >
+
                 CONTINUE →
+
             </button>
+
         `;
 }
 
+
 function level2Next() {
+
     document
         .getElementById("memoryContent")
         .innerHTML = `
+
             <div class="memory-number">
                 PLAYER PROFILE · 002
             </div>
+
 
             <div class="memory-date">
                 FAVORITES
             </div>
 
+
             <div class="memory-icon">
                 🎸
             </div>
+
 
             <div class="memory-title">
                 SU MUNDO
             </div>
 
+
             <div class="memory-text">
+
                 <div class="favorite-grid">
 
                     <div class="favorite-item">
+
                         <div class="favorite-icon">
                             🐉
                         </div>
@@ -605,9 +726,12 @@ function level2Next() {
                         <div class="favorite-description">
                             Uno de sus mundos favoritos.
                         </div>
+
                     </div>
 
+
                     <div class="favorite-item">
+
                         <div class="favorite-icon">
                             ☠️
                         </div>
@@ -619,9 +743,12 @@ function level2Next() {
                         <div class="favorite-description">
                             Otra de sus grandes obsesiones.
                         </div>
+
                     </div>
 
+
                     <div class="favorite-item">
+
                         <div class="favorite-icon">
                             ⚽
                         </div>
@@ -633,9 +760,12 @@ function level2Next() {
                         <div class="favorite-description">
                             Su equipo.
                         </div>
+
                     </div>
 
+
                     <div class="favorite-item">
+
                         <div class="favorite-icon">
                             🎸
                         </div>
@@ -649,12 +779,16 @@ function level2Next() {
                             <br>
                             LIVE · JAN 2026
                         </div>
+
                     </div>
 
                 </div>
+
             </div>
 
+
             <div class="memory-highlight">
+
                 Y entre juegos, música, fútbol,
                 amigos y comida...
 
@@ -663,36 +797,50 @@ function level2Next() {
                 también están esos momentos
                 en los que simplemente
                 pasamos tiempo juntos.
+
             </div>
+
 
             <button
                 class="button"
                 onclick="completeLevel2()"
             >
+
                 ✓ COMPLETE LEVEL
+
             </button>
+
         `;
 }
 
+
 function completeLevel2() {
+
     document
         .getElementById("memoryContent")
         .innerHTML = `
+
             <div class="complete">
                 LEVEL 02 COMPLETE ✓
             </div>
+
 
             <div class="big-heart">
                 🎮💙
             </div>
 
+
             <div class="memory-title">
+
                 PLAYER
                 <br>
                 IDENTIFIED
+
             </div>
 
+
             <div class="memory-text">
+
                 Ahora sé un poquito más
                 sobre el jugador.
 
@@ -700,22 +848,29 @@ function completeLevel2() {
 
                 Pero todavía queda mucho
                 por descubrir.
+
             </div>
+
 
             <button
                 class="button"
                 onclick="backToMenu()"
             >
+
                 ← RETURN TO ARCHIVE
+
             </button>
+
         `;
 }
+
 
 /* =========================
    LEVEL 03 · NUESTROS RECUERDOS
 ========================= */
 
 function openLevel3() {
+
     document
         .getElementById("menuScreen")
         .classList
@@ -729,27 +884,35 @@ function openLevel3() {
     showLevel3();
 }
 
+
 function showLevel3() {
+
     document
         .getElementById("memoryContent")
         .innerHTML = `
+
             <div class="memory-number">
                 MEMORY ARCHIVE · 003
             </div>
+
 
             <div class="memory-date">
                 RECUERDOS PEQUEÑOS
             </div>
 
+
             <div class="memory-icon">
                 📸
             </div>
+
 
             <div class="memory-title">
                 ESOS MOMENTOS
             </div>
 
+
             <div class="memory-text">
+
                 No todos nuestros recuerdos
                 necesitan una fecha.
 
@@ -763,42 +926,57 @@ function showLevel3() {
 
                 <br>
 
-                Un beso.
+                Un momento juntos.
 
                 <br>
 
-                Un momento juntos.
+                Un beso.
 
                 <br><br>
 
                 Y aunque parezcan pequeños,
                 terminan significando muchísimo.
+
             </div>
+
 
             <button
                 class="button"
                 onclick="level3Memory1()"
             >
+
                 OPEN MEMORY →
+
             </button>
+
         `;
 }
 
+
+/* =========================
+   LEVEL 03 · MEMORIA 001
+========================= */
+
 function level3Memory1() {
+
     document
         .getElementById("memoryContent")
         .innerHTML = `
+
             <div class="memory-number">
                 MEMORY 001 · PRIVATE
             </div>
+
 
             <div class="memory-date">
                 UN MOMENTO JUNTOS
             </div>
 
+
             <div class="memory-title">
-                UN BESO
+                UN MOMENTO JUNTOS
             </div>
+
 
             <img
                 class="memory-photo"
@@ -806,7 +984,9 @@ function level3Memory1() {
                 alt="Foto juntos"
             >
 
+
             <div class="memory-highlight">
+
                 Hay momentos en los que
                 simplemente estar juntos
                 ya significa mucho.
@@ -814,32 +994,47 @@ function level3Memory1() {
                 <br><br>
 
                 Y este es uno de ellos.
+
             </div>
+
 
             <button
                 class="button"
                 onclick="level3Memory2()"
             >
+
                 NEXT MEMORY →
+
             </button>
+
         `;
 }
 
+
+/* =========================
+   LEVEL 03 · MEMORIA 002
+========================= */
+
 function level3Memory2() {
+
     document
         .getElementById("memoryContent")
         .innerHTML = `
+
             <div class="memory-number">
                 MEMORY 002 · PRIVATE
             </div>
 
+
             <div class="memory-date">
-                NO RECUERDO EL LUGAR
+                UN RECUERDO ESPECIAL
             </div>
 
+
             <div class="memory-title">
-                PERO SÍ EL BESO
+                EL BESO
             </div>
+
 
             <img
                 class="memory-photo"
@@ -847,7 +1042,9 @@ function level3Memory2() {
                 alt="Foto de un beso"
             >
 
+
             <div class="memory-highlight">
+
                 No recuerdo exactamente
                 dónde fue.
 
@@ -856,36 +1053,50 @@ function level3Memory2() {
                 Pero sí recuerdo
                 lo tierno que se siente
                 mirar esta foto.
+
             </div>
+
 
             <button
                 class="button"
                 onclick="completeLevel3()"
             >
+
                 ✓ COMPLETE LEVEL
+
             </button>
+
         `;
 }
 
+
 function completeLevel3() {
+
     document
         .getElementById("memoryContent")
         .innerHTML = `
+
             <div class="complete">
                 LEVEL 03 COMPLETE ✓
             </div>
+
 
             <div class="big-heart">
                 💙
             </div>
 
+
             <div class="memory-title">
+
                 PEQUEÑOS
                 <br>
                 MOMENTOS
+
             </div>
 
+
             <div class="memory-text">
+
                 Quizás no podamos recordar
                 exactamente dónde ocurrió
                 cada momento.
@@ -900,24 +1111,29 @@ function completeLevel3() {
                 Y creo que eso es lo que
                 hace que un recuerdo
                 sea realmente nuestro.
+
             </div>
+
 
             <button
                 class="button"
                 onclick="backToMenu()"
             >
+
                 ← RETURN TO ARCHIVE
+
             </button>
+
         `;
 }
+
 
 /* =========================
    LEVEL 04 · UNA CARTA PARA TI
 ========================= */
 
-let letterPage = 0;
-
 const letterPages = [
+
     {
         date: "PARA TI, BRAYAN",
         icon: "💙",
@@ -1266,11 +1482,13 @@ const letterPages = [
     }
 ];
 
+
 /* =========================
    ABRIR LEVEL 04
 ========================= */
 
 function openLevel4() {
+
     document
         .getElementById("menuScreen")
         .classList
@@ -1286,38 +1504,50 @@ function openLevel4() {
     showLetterPage();
 }
 
+
 /* =========================
    MOSTRAR CARTA
 ========================= */
 
 function showLetterPage() {
-    const page = letterPages[letterPage];
+
+    const page =
+        letterPages[letterPage];
 
     const isLast =
         letterPage === letterPages.length - 1;
 
+
     document
         .getElementById("memoryContent")
         .innerHTML = `
+
             <div class="memory-number">
                 PERSONAL FILE · 004
             </div>
+
 
             <div class="memory-date">
                 ${page.date}
             </div>
 
+
             <div class="memory-icon">
                 ${page.icon}
             </div>
+
 
             <div class="memory-title">
                 UNA CARTA PARA TI
             </div>
 
+
             <div class="memory-text">
+
                 ${page.text}
+
             </div>
+
 
             <button
                 class="button"
@@ -1327,49 +1557,69 @@ function showLetterPage() {
                         : "nextLetterPage()"
                 }"
             >
+
                 ${
                     isLast
                         ? "✓ FIN DE LA CARTA"
                         : "CONTINUE →"
                 }
+
             </button>
+
         `;
 }
+
 
 /* =========================
    SIGUIENTE PÁGINA
 ========================= */
 
 function nextLetterPage() {
-    if (letterPage < letterPages.length - 1) {
+
+    if (
+        letterPage <
+        letterPages.length - 1
+    ) {
+
         letterPage++;
+
         showLetterPage();
+
     }
 }
+
 
 /* =========================
    LEVEL 04 COMPLETE
 ========================= */
 
 function completeLevel4() {
+
     document
         .getElementById("memoryContent")
         .innerHTML = `
+
             <div class="complete">
                 LEVEL 04 COMPLETE ✓
             </div>
+
 
             <div class="big-heart">
                 💙
             </div>
 
+
             <div class="memory-title">
+
                 CARTA
                 <br>
                 ENTREGADA
+
             </div>
 
+
             <div class="memory-text">
+
                 Esta vez no había ninguna misión.
 
                 <br><br>
@@ -1381,22 +1631,29 @@ function completeLevel4() {
 
                 Y que guardaras estas palabras
                 junto con todos nuestros recuerdos.
+
             </div>
+
 
             <button
                 class="button"
                 onclick="backToMenu()"
             >
+
                 ← RETURN TO ARCHIVE
+
             </button>
+
         `;
 }
+
 
 /* =========================
    LEVEL 05 · EASTER EGG
 ========================= */
 
 function openLevel5() {
+
     document
         .getElementById("menuScreen")
         .classList
@@ -1407,26 +1664,33 @@ function openLevel5() {
         .classList
         .remove("hidden");
 
+
     document
         .getElementById("memoryContent")
         .innerHTML = `
+
             <div class="memory-number">
                 UNKNOWN FILE · 005
             </div>
+
 
             <div class="memory-date">
                 EASTER EGG
             </div>
 
+
             <div class="memory-icon">
                 🐱
             </div>
+
 
             <div class="memory-title">
                 ARCHIVO OCULTO
             </div>
 
+
             <div class="memory-text">
+
                 Has encontrado un archivo
                 que probablemente no debería estar aquí.
 
@@ -1441,36 +1705,47 @@ function openLevel5() {
                 <br><br>
 
                 JAJAJA.
+
             </div>
+
 
             <button
                 class="button"
                 onclick="playEasterEgg()"
             >
+
                 OPEN FILE →
+
             </button>
+
         `;
 }
+
 
 /* =========================
    REPRODUCIR EASTER EGG
 ========================= */
 
 function playEasterEgg() {
+
     document
         .getElementById("memoryContent")
         .innerHTML = `
+
             <div class="memory-number">
                 UNKNOWN FILE · 005
             </div>
+
 
             <div class="memory-date">
                 PLAYING...
             </div>
 
+
             <div class="memory-title">
                 GATO.EXE
             </div>
+
 
             <video
                 class="memory-video"
@@ -1479,60 +1754,79 @@ function playEasterEgg() {
                 playsinline
                 autoplay
             >
+
                 <source
                     src="media/gato%20ps2.mp4"
                     type="video/mp4"
                 >
 
                 Tu navegador no puede reproducir este video.
+
             </video>
 
+
             <div class="memory-highlight">
+
                 SYSTEM STATUS:
 
                 <br><br>
 
                 probablemente fue un error abrir esto.
+
             </div>
+
         `;
+
 
     const video =
         document.getElementById("easterEggVideo");
+
 
     if (!video) {
         return;
     }
 
+
     video.play().catch(() => {});
+
 
     video.addEventListener("ended", () => {
         completeLevel5();
     });
 }
 
+
 /* =========================
    LEVEL 05 COMPLETE
 ========================= */
 
 function completeLevel5() {
+
     document
         .getElementById("memoryContent")
         .innerHTML = `
+
             <div class="complete">
                 LEVEL 05 COMPLETE ✓
             </div>
+
 
             <div class="big-heart">
                 🐱💥
             </div>
 
+
             <div class="memory-title">
+
                 EASTER
                 <br>
                 EGG FOUND
+
             </div>
 
+
             <div class="memory-text">
+
                 No tenía absolutamente
                 ningún sentido que esto estuviera aquí.
 
@@ -1543,22 +1837,29 @@ function completeLevel5() {
                 <br><br>
 
                 ya es parte de nuestra historia. JAJAJA.
+
             </div>
+
 
             <button
                 class="button"
                 onclick="backToMenu()"
             >
+
                 ← RETURN TO ARCHIVE
+
             </button>
+
         `;
 }
+
 
 /* =========================
    VOLVER AL ARCHIVO
 ========================= */
 
 function backToMenu() {
+
     document
         .getElementById("level1")
         .classList
@@ -1569,3 +1870,4 @@ function backToMenu() {
         .classList
         .remove("hidden");
 }
+```
