@@ -963,7 +963,6 @@ function showLevel3() {
         `;
 }
 
-
 function level3Memory1() {
 
     document
@@ -985,21 +984,11 @@ function level3Memory1() {
             </div>
 
 
-            <video
+            <img
                 class="memory-video"
-                controls
-                playsinline
-                preload="metadata"
+                src="media/foto%20hospital.jpg"
+                alt="Foto juntos"
             >
-
-                <source
-                    src="media/foto%20hospital.mp4"
-                    type="video/mp4"
-                >
-
-                Tu navegador no puede reproducir este video.
-
-            </video>
 
 
             <div class="memory-highlight">
@@ -1027,7 +1016,6 @@ function level3Memory1() {
         `;
 }
 
-
 function level3Memory2() {
 
     document
@@ -1049,21 +1037,11 @@ function level3Memory2() {
             </div>
 
 
-            <video
+            <img
                 class="memory-video"
-                controls
-                playsinline
-                preload="metadata"
+                src="media/foto%20kiss%201.jpg"
+                alt="Foto de un beso"
             >
-
-                <source
-                    src="media/foto%20kiss%201.mp4"
-                    type="video/mp4"
-                >
-
-                Tu navegador no puede reproducir este video.
-
-            </video>
 
 
             <div class="memory-highlight">
@@ -1091,9 +1069,6 @@ function level3Memory2() {
 
         `;
 }
-
-
-function completeLevel3() {
 
     document
         .getElementById("memoryContent")
