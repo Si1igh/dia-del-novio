@@ -985,7 +985,7 @@ function level3Memory1() {
 
 
             <img
-                class="memory-video"
+                class="memory-photo"
                 src="media/foto%20hospital.jpg"
                 alt="Foto juntos"
             >
@@ -1038,7 +1038,7 @@ function level3Memory2() {
 
 
             <img
-                class="memory-video"
+                class="memory-photo"
                 src="media/foto%20kiss%201.jpg"
                 alt="Foto de un beso"
             >
