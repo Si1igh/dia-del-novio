@@ -1,12 +1,12 @@
-```javascript
 let currentMemory = 0;
-let letterPage = 0;
+
 
 /* =========================
    LEVEL 01 · NUESTRA HISTORIA
-========================= */
+========================== */
 
 const memories = [
+
     {
         date: "03 · MAY · 2026",
         title: "EL COMIENZO",
@@ -39,6 +39,7 @@ const memories = [
         video: null
     },
 
+
     {
         date: "03 · MAY · 2026",
         title: "LOS JUEGOS",
@@ -61,6 +62,7 @@ const memories = [
 
         video: "media/raton%20cec.mp4"
     },
+
 
     {
         date: "04 · MAY · 2026",
@@ -96,6 +98,7 @@ const memories = [
         ]
     },
 
+
     {
         date: "09 · MAY · 2026",
         title: "DÍA 07",
@@ -118,6 +121,7 @@ const memories = [
 
         video: "media/primera%20foto.mp4"
     },
+
 
     {
         date: "24 · MAY · 2026",
@@ -149,6 +153,7 @@ const memories = [
         video: null
     },
 
+
     {
         date: "UNO DE NUESTROS MEJORES DÍAS",
         title: "EL MAR",
@@ -176,12 +181,13 @@ const memories = [
             "media/foto%20polaroid%202.mp4"
         ]
     }
+
 ];
 
 
 /* =========================
    INICIO
-========================= */
+========================== */
 
 function startGame() {
 
@@ -190,23 +196,31 @@ function startGame() {
         .classList
         .add("hidden");
 
+
     document
         .getElementById("loadingScreen")
         .classList
         .remove("hidden");
 
+
     const progress =
         document.getElementById("progress");
 
+
     setTimeout(() => {
+
         progress.style.width = "100%";
+
     }, 100);
 
+
     let number = 0;
+
 
     const counter = setInterval(() => {
 
         number += 4;
+
 
         if (number >= 100) {
 
@@ -214,12 +228,14 @@ function startGame() {
 
             clearInterval(counter);
 
+
             setTimeout(() => {
 
                 document
                     .getElementById("loadingScreen")
                     .classList
                     .add("hidden");
+
 
                 document
                     .getElementById("menuScreen")
@@ -229,17 +245,20 @@ function startGame() {
             }, 500);
         }
 
+
         document
             .getElementById("percentage")
-            .textContent = number + "%";
+            .textContent =
+            number + "%";
 
     }, 100);
+
 }
 
 
 /* =========================
    LEVEL 01
-========================= */
+========================== */
 
 function openLevel1() {
 
@@ -248,14 +267,17 @@ function openLevel1() {
         .classList
         .add("hidden");
 
+
     document
         .getElementById("level1")
         .classList
         .remove("hidden");
 
+
     currentMemory = 0;
 
     showMemory();
+
 }
 
 
@@ -264,11 +286,14 @@ function showMemory() {
     const memory =
         memories[currentMemory];
 
+
     let days = "";
+
 
     if (currentMemory === 3) {
 
         days = `
+
             <div class="days">
 
                 <div class="day active">01</div>
@@ -280,15 +305,18 @@ function showMemory() {
                 <div class="day active">07</div>
 
             </div>
+
         `;
     }
 
 
     let media = "";
 
+
     if (memory.video) {
 
         media = `
+
             <video
                 class="memory-video"
                 controls
@@ -304,6 +332,7 @@ function showMemory() {
                 Tu navegador no puede reproducir este video.
 
             </video>
+
         `;
     }
 
@@ -313,6 +342,7 @@ function showMemory() {
         memory.videos.forEach(video => {
 
             media += `
+
                 <video
                     class="memory-video"
                     controls
@@ -328,9 +358,11 @@ function showMemory() {
                     Tu navegador no puede reproducir este video.
 
                 </video>
+
             `;
 
         });
+
     }
 
 
@@ -345,7 +377,8 @@ function showMemory() {
 
 
     const isLast =
-        currentMemory === memories.length - 1;
+        currentMemory ===
+        memories.length - 1;
 
 
     document
@@ -365,22 +398,30 @@ function showMemory() {
 
 
             <div class="memory-date">
+
                 ${memory.date}
+
             </div>
 
 
             <div class="memory-icon">
+
                 ${memory.icon}
+
             </div>
 
 
             <div class="memory-title">
+
                 ${memory.title}
+
             </div>
 
 
             <div class="memory-text">
+
                 ${memory.text}
+
             </div>
 
 
@@ -405,6 +446,7 @@ function showMemory() {
             </button>
 
         `;
+
 }
 
 
@@ -424,6 +466,7 @@ function nextMemory() {
         completeLevel();
 
     }
+
 }
 
 
@@ -434,12 +477,16 @@ function completeLevel() {
         .innerHTML = `
 
             <div class="complete">
+
                 LEVEL 01 COMPLETE ✓
+
             </div>
 
 
             <div class="big-heart">
+
                 💙
+
             </div>
 
 
@@ -479,12 +526,13 @@ function completeLevel() {
             </button>
 
         `;
+
 }
 
 
 /* =========================
    LEVEL 02 · SOBRE TI
-========================= */
+========================== */
 
 function openLevel2() {
 
@@ -493,12 +541,15 @@ function openLevel2() {
         .classList
         .add("hidden");
 
+
     document
         .getElementById("level1")
         .classList
         .remove("hidden");
 
+
     showLevel2();
+
 }
 
 
@@ -680,6 +731,7 @@ function showLevel2() {
             </button>
 
         `;
+
 }
 
 
@@ -811,6 +863,7 @@ function level2Next() {
             </button>
 
         `;
+
 }
 
 
@@ -821,12 +874,16 @@ function completeLevel2() {
         .innerHTML = `
 
             <div class="complete">
+
                 LEVEL 02 COMPLETE ✓
+
             </div>
 
 
             <div class="big-heart">
+
                 🎮💙
+
             </div>
 
 
@@ -862,12 +919,13 @@ function completeLevel2() {
             </button>
 
         `;
+
 }
 
 
 /* =========================
    LEVEL 03 · NUESTROS RECUERDOS
-========================= */
+========================== */
 
 function openLevel3() {
 
@@ -876,12 +934,15 @@ function openLevel3() {
         .classList
         .add("hidden");
 
+
     document
         .getElementById("level1")
         .classList
         .remove("hidden");
 
+
     showLevel3();
+
 }
 
 
@@ -926,11 +987,11 @@ function showLevel3() {
 
                 <br>
 
-                Un momento juntos.
+                Un beso.
 
                 <br>
 
-                Un beso.
+                Un momento juntos.
 
                 <br><br>
 
@@ -950,12 +1011,9 @@ function showLevel3() {
             </button>
 
         `;
+
 }
 
-
-/* =========================
-   LEVEL 03 · MEMORIA 001
-========================= */
 
 function level3Memory1() {
 
@@ -1008,12 +1066,9 @@ function level3Memory1() {
             </button>
 
         `;
+
 }
 
-
-/* =========================
-   LEVEL 03 · MEMORIA 002
-========================= */
 
 function level3Memory2() {
 
@@ -1027,12 +1082,12 @@ function level3Memory2() {
 
 
             <div class="memory-date">
-                UN RECUERDO ESPECIAL
+                NO RECUERDO EL LUGAR
             </div>
 
 
             <div class="memory-title">
-                EL BESO
+                PERO SÍ EL BESO
             </div>
 
 
@@ -1067,6 +1122,7 @@ function level3Memory2() {
             </button>
 
         `;
+
 }
 
 
@@ -1077,12 +1133,16 @@ function completeLevel3() {
         .innerHTML = `
 
             <div class="complete">
+
                 LEVEL 03 COMPLETE ✓
+
             </div>
 
 
             <div class="big-heart">
+
                 💙
+
             </div>
 
 
@@ -1125,12 +1185,16 @@ function completeLevel3() {
             </button>
 
         `;
+
 }
 
 
 /* =========================
    LEVEL 04 · UNA CARTA PARA TI
-========================= */
+========================== */
+
+let letterPage = 0;
+
 
 const letterPages = [
 
@@ -1171,6 +1235,7 @@ const letterPages = [
         `
     },
 
+
     {
         date: "TODO LO QUE PASÓ",
         icon: "🌊",
@@ -1209,6 +1274,7 @@ const letterPages = [
             siendo de mis favoritos.
         `
     },
+
 
     {
         date: "CONOCERTE",
@@ -1267,6 +1333,7 @@ const letterPages = [
             sin pensar en ti.
         `
     },
+
 
     {
         date: "LO QUE HEMOS CONSTRUIDO",
@@ -1334,6 +1401,7 @@ const letterPages = [
         `
     },
 
+
     {
         date: "Y TODAVÍA NOS QUEDA",
         icon: "💙",
@@ -1396,6 +1464,7 @@ const letterPages = [
         `
     },
 
+
     {
         date: "GRACIAS, AMOR",
         icon: "🫶",
@@ -1418,7 +1487,7 @@ const letterPages = [
 
             Gracias por formar parte de mi vida
             de una manera que nunca imaginé
-            cuando te conocí aquel dia de mayo.
+            cuando te conocí aquel día de mayo.
 
             <br><br>
 
@@ -1438,6 +1507,7 @@ const letterPages = [
             Y míranos ahora. JAJA.
         `
     },
+
 
     {
         date: "PARA TI",
@@ -1480,12 +1550,13 @@ const letterPages = [
             — Cata
         `
     }
+
 ];
 
 
 /* =========================
    ABRIR LEVEL 04
-========================= */
+========================== */
 
 function openLevel4() {
 
@@ -1494,28 +1565,33 @@ function openLevel4() {
         .classList
         .add("hidden");
 
+
     document
         .getElementById("level1")
         .classList
         .remove("hidden");
 
+
     letterPage = 0;
 
     showLetterPage();
+
 }
 
 
 /* =========================
    MOSTRAR CARTA
-========================= */
+========================== */
 
 function showLetterPage() {
 
     const page =
         letterPages[letterPage];
 
+
     const isLast =
-        letterPage === letterPages.length - 1;
+        letterPage ===
+        letterPages.length - 1;
 
 
     document
@@ -1567,12 +1643,13 @@ function showLetterPage() {
             </button>
 
         `;
+
 }
 
 
 /* =========================
    SIGUIENTE PÁGINA
-========================= */
+========================== */
 
 function nextLetterPage() {
 
@@ -1586,12 +1663,13 @@ function nextLetterPage() {
         showLetterPage();
 
     }
+
 }
 
 
 /* =========================
    LEVEL 04 COMPLETE
-========================= */
+========================== */
 
 function completeLevel4() {
 
@@ -1600,12 +1678,16 @@ function completeLevel4() {
         .innerHTML = `
 
             <div class="complete">
+
                 LEVEL 04 COMPLETE ✓
+
             </div>
 
 
             <div class="big-heart">
+
                 💙
+
             </div>
 
 
@@ -1645,12 +1727,13 @@ function completeLevel4() {
             </button>
 
         `;
+
 }
 
 
 /* =========================
    LEVEL 05 · EASTER EGG
-========================= */
+========================== */
 
 function openLevel5() {
 
@@ -1658,6 +1741,7 @@ function openLevel5() {
         .getElementById("menuScreen")
         .classList
         .add("hidden");
+
 
     document
         .getElementById("level1")
@@ -1719,12 +1803,13 @@ function openLevel5() {
             </button>
 
         `;
+
 }
 
 
 /* =========================
    REPRODUCIR EASTER EGG
-========================= */
+========================== */
 
 function playEasterEgg() {
 
@@ -1782,23 +1867,25 @@ function playEasterEgg() {
         document.getElementById("easterEggVideo");
 
 
-    if (!video) {
-        return;
+    if (video) {
+
+        video.play().catch(() => {});
+
+
+        video.addEventListener("ended", () => {
+
+            completeLevel5();
+
+        });
+
     }
 
-
-    video.play().catch(() => {});
-
-
-    video.addEventListener("ended", () => {
-        completeLevel5();
-    });
 }
 
 
 /* =========================
    LEVEL 05 COMPLETE
-========================= */
+========================== */
 
 function completeLevel5() {
 
@@ -1807,12 +1894,16 @@ function completeLevel5() {
         .innerHTML = `
 
             <div class="complete">
+
                 LEVEL 05 COMPLETE ✓
+
             </div>
 
 
             <div class="big-heart">
+
                 🐱💥
+
             </div>
 
 
@@ -1851,12 +1942,13 @@ function completeLevel5() {
             </button>
 
         `;
+
 }
 
 
 /* =========================
    VOLVER AL ARCHIVO
-========================= */
+========================== */
 
 function backToMenu() {
 
@@ -1865,9 +1957,10 @@ function backToMenu() {
         .classList
         .add("hidden");
 
+
     document
         .getElementById("menuScreen")
         .classList
         .remove("hidden");
+
 }
-```
