@@ -180,7 +180,6 @@ const memories = [
             "media/foto%20polaroid%202.mp4"
         ]
     }
-
 ];
 
 
@@ -1161,7 +1160,6 @@ LEVEL 04 · UNA CARTA PARA TI
 
 let letterPage = 0;
 
-
 const letterPages = [
 
     {
@@ -1516,7 +1514,6 @@ const letterPages = [
             — Cata
         `
     }
-
 ];
 
 
@@ -1673,6 +1670,218 @@ function completeLevel4() {
 
                 Y que guardaras estas palabras
                 junto con todos nuestros recuerdos.
+
+            </div>
+
+
+            <button
+                class="button"
+                onclick="backToMenu()"
+            >
+
+                ← RETURN TO ARCHIVE
+
+            </button>
+
+        `;
+}
+
+
+/* =========================
+LEVEL 05 · EASTER EGG
+========================= */
+
+function openLevel5() {
+
+    document
+        .getElementById("menuScreen")
+        .classList
+        .add("hidden");
+
+    document
+        .getElementById("level1")
+        .classList
+        .remove("hidden");
+
+
+    document
+        .getElementById("memoryContent")
+        .innerHTML = `
+
+            <div class="memory-number">
+                UNKNOWN FILE · 005
+            </div>
+
+
+            <div class="memory-date">
+                EASTER EGG
+            </div>
+
+
+            <div class="memory-icon">
+                🐱
+            </div>
+
+
+            <div class="memory-title">
+                ARCHIVO OCULTO
+            </div>
+
+
+            <div class="memory-text">
+
+                Has encontrado un archivo
+                que probablemente no debería estar aquí.
+
+                <br><br>
+
+                No sé qué esperabas encontrar...
+
+                <br><br>
+
+                pero bueno.
+
+                <br><br>
+
+                JAJAJA.
+
+            </div>
+
+
+            <button
+                class="button"
+                onclick="playEasterEgg()"
+            >
+
+                OPEN FILE →
+
+            </button>
+
+        `;
+}
+
+
+/* =========================
+REPRODUCIR EASTER EGG
+========================= */
+
+function playEasterEgg() {
+
+    document
+        .getElementById("memoryContent")
+        .innerHTML = `
+
+            <div class="memory-number">
+                UNKNOWN FILE · 005
+            </div>
+
+
+            <div class="memory-date">
+                PLAYING...
+            </div>
+
+
+            <div class="memory-title">
+                GATO.EXE
+            </div>
+
+
+            <video
+                class="memory-video"
+                id="easterEggVideo"
+                controls
+                playsinline
+                autoplay
+            >
+
+                <source
+                    src="media/gato%20ps2.mp4"
+                    type="video/mp4"
+                >
+
+                Tu navegador no puede reproducir este video.
+
+            </video>
+
+
+            <div class="memory-highlight">
+
+                SYSTEM STATUS:
+
+                <br><br>
+
+                probablemente fue un error abrir esto.
+
+            </div>
+
+        `;
+
+
+    const video =
+        document.getElementById("easterEggVideo");
+
+
+    if (video) {
+
+        video.play().catch(() => {});
+
+    }
+
+
+    video.addEventListener("ended", () => {
+
+        completeLevel5();
+
+    });
+
+}
+
+
+/* =========================
+LEVEL 05 COMPLETE
+========================= */
+
+function completeLevel5() {
+
+    document
+        .getElementById("memoryContent")
+        .innerHTML = `
+
+            <div class="complete">
+
+                LEVEL 05 COMPLETE ✓
+
+            </div>
+
+
+            <div class="big-heart">
+
+                🐱💥
+
+            </div>
+
+
+            <div class="memory-title">
+
+                EASTER
+                <br>
+                EGG FOUND
+
+            </div>
+
+
+            <div class="memory-text">
+
+                No tenía absolutamente
+                ningún sentido que esto estuviera aquí.
+
+                <br><br>
+
+                Pero ahora que lo encontraste...
+
+                <br><br>
+
+                ya es parte de nuestra historia. JAJAJA.
 
             </div>
 
