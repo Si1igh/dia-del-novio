@@ -209,21 +209,17 @@ function startGame() {
 
     }, 100);
 
-
     let number = 0;
-
 
     const counter = setInterval(() => {
 
         number += 4;
-
 
         if (number >= 100) {
 
             number = 100;
 
             clearInterval(counter);
-
 
             setTimeout(() => {
 
@@ -232,24 +228,19 @@ function startGame() {
                     .classList
                     .add("hidden");
 
-
                 document
                     .getElementById("menuScreen")
                     .classList
                     .remove("hidden");
 
             }, 500);
-
         }
-
 
         document
             .getElementById("percentage")
-            .textContent =
-            number + "%";
+            .textContent = number + "%";
 
     }, 100);
-
 }
 
 
@@ -264,17 +255,14 @@ function openLevel1() {
         .classList
         .add("hidden");
 
-
     document
         .getElementById("level1")
         .classList
         .remove("hidden");
 
-
     currentMemory = 0;
 
     showMemory();
-
 }
 
 
@@ -283,14 +271,11 @@ function showMemory() {
     const memory =
         memories[currentMemory];
 
-
     let days = "";
-
 
     if (currentMemory === 3) {
 
         days = `
-
             <div class="days">
 
                 <div class="day active">01</div>
@@ -302,9 +287,7 @@ function showMemory() {
                 <div class="day active">07</div>
 
             </div>
-
         `;
-
     }
 
 
@@ -314,7 +297,6 @@ function showMemory() {
     if (memory.video) {
 
         media = `
-
             <video
                 class="memory-video"
                 controls
@@ -330,9 +312,7 @@ function showMemory() {
                 Tu navegador no puede reproducir este video.
 
             </video>
-
         `;
-
     }
 
 
@@ -341,7 +321,6 @@ function showMemory() {
         memory.videos.forEach(video => {
 
             media += `
-
                 <video
                     class="memory-video"
                     controls
@@ -357,11 +336,9 @@ function showMemory() {
                     Tu navegador no puede reproducir este video.
 
                 </video>
-
             `;
 
         });
-
     }
 
 
@@ -376,8 +353,7 @@ function showMemory() {
 
 
     const isLast =
-        currentMemory ===
-        memories.length - 1;
+        currentMemory === memories.length - 1;
 
 
     document
@@ -445,7 +421,6 @@ function showMemory() {
             </button>
 
         `;
-
 }
 
 
@@ -465,7 +440,6 @@ function nextMemory() {
         completeLevel();
 
     }
-
 }
 
 
@@ -525,7 +499,6 @@ function completeLevel() {
             </button>
 
         `;
-
 }
 
 
@@ -540,15 +513,12 @@ function openLevel2() {
         .classList
         .add("hidden");
 
-
     document
         .getElementById("level1")
         .classList
         .remove("hidden");
 
-
     showLevel2();
-
 }
 
 
@@ -730,7 +700,6 @@ function showLevel2() {
             </button>
 
         `;
-
 }
 
 
@@ -864,7 +833,6 @@ function level2Next() {
             </button>
 
         `;
-
 }
 
 
@@ -920,7 +888,6 @@ function completeLevel2() {
             </button>
 
         `;
-
 }
 
 
@@ -935,15 +902,12 @@ function openLevel3() {
         .classList
         .add("hidden");
 
-
     document
         .getElementById("level1")
         .classList
         .remove("hidden");
 
-
     showLevel3();
-
 }
 
 
@@ -1012,7 +976,6 @@ function showLevel3() {
             </button>
 
         `;
-
 }
 
 
@@ -1071,7 +1034,6 @@ function level3Memory1() {
             </button>
 
         `;
-
 }
 
 
@@ -1131,7 +1093,6 @@ function level3Memory2() {
             </button>
 
         `;
-
 }
 
 
@@ -1198,7 +1159,6 @@ function completeLevel3() {
             </button>
 
         `;
-
 }
 
 
@@ -1213,10 +1173,8 @@ function backToMenu() {
         .classList
         .add("hidden");
 
-
     document
         .getElementById("menuScreen")
         .classList
         .remove("hidden");
-
 }
